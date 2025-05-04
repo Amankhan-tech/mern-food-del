@@ -1,17 +1,16 @@
-import React, { useState } from "react";
+import React from "react";
 import { StoreContext } from "./StoreContext";
+import { food_list } from "../assets/assets";
 
-const StoreContextProvider = ({ children }) => {
-  const [category, setCategory] = useState("All");
+const StoreContextProvider = (props) => {
 
   const ContextValue = {
-    category,
-    setCategory,
+    food_list
   };
 
   return (
     <StoreContext.Provider value={ContextValue}>
-      {children}
+      {props.children}
     </StoreContext.Provider>
   );
 };
